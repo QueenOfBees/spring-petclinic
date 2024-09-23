@@ -286,24 +286,48 @@
     </license>
   </licenses>
 
+
   <repositories>
     <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
+      <id>fanruan</id>
+      <name>fanruan</name>
+      <url>https://mvn.fanruan.com/repository/fanruan/</url>
       <snapshots>
         <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
       </snapshots>
     </repository>
     <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
+      <id>fanruan1</id>
+      <name>fanruan1</name>
+      <url>https://mvn.fanruan.com/repository/maven-public/</url>
       <snapshots>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
       </snapshots>
     </repository>
   </repositories>
+
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>spring-snapshots</id>-->
+<!--      <name>Spring Snapshots</name>-->
+<!--      <url>https://repo.spring.io/snapshot</url>-->
+<!--      <snapshots>-->
+<!--        <enabled>true</enabled>-->
+<!--      </snapshots>-->
+<!--    </repository>-->
+<!--    <repository>-->
+<!--      <id>spring-milestones</id>-->
+<!--      <name>Spring Milestones</name>-->
+<!--      <url>https://repo.spring.io/milestone</url>-->
+<!--      <snapshots>-->
+<!--        <enabled>false</enabled>-->
+<!--      </snapshots>-->
+<!--    </repository>-->
+<!--  </repositories>-->
 
   <pluginRepositories>
     <pluginRepository>
