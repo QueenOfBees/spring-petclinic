@@ -2,19 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                sh 'make check || true'
+                container('maven') {
+                    mvn test
+                }
+                junit '**/target/*.xml'
             }
         }
     }
