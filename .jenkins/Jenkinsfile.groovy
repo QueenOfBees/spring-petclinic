@@ -1,14 +1,20 @@
-#!groovy
-
 pipeline {
     agent any
+
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}," +
-                        "branch is ${env.BRANCH_NAME}, change title is ${env.CHANGE_TITLE}"
-                echo "all env:>>>>"
-                env
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
