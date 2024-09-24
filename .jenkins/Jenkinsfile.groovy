@@ -3,14 +3,14 @@ pipeline {
 
     stages {
         stage('Test') {
-            steps {
-                /* `make check` returns non-zero on test failures,
-                * using `true` to allow the Pipeline to continue nonetheless
-                */
-                sh 'make check || true'
-                docker('maven') {
-                    mvn test
+            agent {
+                docker {
+                    image 'maven:3.5.0'
                 }
+            }
+            steps {
+                sh 'mvn clean install'
+                sh 'make check || true'
                 junit '**/target/*.xml'
             }
         }
