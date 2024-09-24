@@ -8,7 +8,7 @@ pipeline {
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
                 sh 'make check || true'
-                container('maven') {
+                docker('maven') {
                     mvn test
                 }
                 junit '**/target/*.xml'
